@@ -1,4 +1,4 @@
-# MagicMirror Module: MOduleToggle
+# MagicMirror Module: ModuleToggle
 
 Hides and shows modules on the [MagicMirror²](https://github.com/MichMich/MagicMirror) by sending a notification
 
