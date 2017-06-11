@@ -9,16 +9,18 @@ Module.register("MMM-ModuleToggle",{
 			
 			Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
 			
-			var modules = MM.getModules().withClass(payload.modules);
+			var hide = MM.getModules().withClass(payload.hide);
 			
-			modules.enumerate(function(module) {
-				Log.log(module.name);
-				if (payload.action === "HIDE"){
-					module.hide(1000, function(){});
-				}else if (payload.action === "SHOW"){
-					module.show(1000, function(){});
-				}
-				
+			hide.enumerate(function(module) {
+				Log.log("Hide "+ module.name);
+				module.hide(1000, function(){});
+			});
+			
+			var show = MM.getModules().withClass(payload.show);
+			
+			show.enumerate(function(module) {
+				Log.log("Show "+ module.name);
+				module.show(1000, function(){});
 			});
 		}
 	}

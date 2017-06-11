@@ -17,17 +17,17 @@ Therefore you can for example use the [Magic Mirror Module: Buttons](https://git
 
 ### Notification Parameters
 
-You can send a notification with the name ```MODULE_TOGGLE``` and the following payload to hide the calendar module:
+You can send a notification with the name ```MODULE_TOGGLE``` and the payload with two lists for the modules to hide and for the modules to show:
 
 ```
 notification: "MODULE_TOGGLE",
-payload: {modules: ["calendar"], action: "HIDE"}
+payload: {hide: ["calendar"], show: []}
 ```
 
 To show the module you need to send the following notification:
 ```
 notification: "MODULE_TOGGLE",
-payload: {modules: ["calendar"], action: "SHOW"}
+payload: {hide: [], show: ["calendar"]}
 ```
 
 
