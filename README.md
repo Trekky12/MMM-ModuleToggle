@@ -4,9 +4,13 @@ Hides and shows modules on the [MagicMirror²](https://github.com/MichMich/MagicM
 
 ## Config
 
+The config is able to hide specific modules on startup:
 ```
 {
-	module: 'MMM-ModuleToggle'
+	module: 'MMM-ModuleToggle',
+	config: {
+		hide: ["clock"]
+	}
 }
 ```
 
@@ -17,18 +21,22 @@ Therefore you can for example use the [Magic Mirror Module: Buttons](https://git
 
 ### Notification Parameters
 
-You can send a notification with the name ```MODULE_TOGGLE``` and the payload with two lists for the modules to hide and for the modules to show:
+You can send a notification with the name ```MODULE_TOGGLE``` and the payload with lists for the modules to hide, show or toggle.
+
+You can hide the calendar and clock module with:
 
 ```
 notification: "MODULE_TOGGLE",
-payload: {hide: ["calendar"], show: []}
+payload: {hide: ["calendar", "clock"], show: [], toggle:[]}
 ```
 
-To show the module you need to send the following notification:
+You can show the calendar module with:
 ```
 notification: "MODULE_TOGGLE",
-payload: {hide: [], show: ["calendar"]}
+payload: {hide: [], show: ["calendar"], toggle:[]}
 ```
 
+You can toggle between show and hide with:
+payload: {hide: [], show: [], toggle:["clock"]}
 
 
