@@ -1,20 +1,20 @@
 # MagicMirror Module: ModuleToggle
 
-Hides and shows modules on the [MagicMirror²](https://github.com/MichMich/MagicMirror) by sending a notification
+Hides and shows modules on the [MagicMirror²](https://github.com/MichMich/MagicMirror) by sending or receiving a notification
 
 ## Config
 
 The config is able to hide specific modules on startup:
 ```
 {
-	module: 'MMM-ModuleToggle',
-	config: {
-		hide: ["clock"]
-	}
+    module: 'MMM-ModuleToggle',
+    config: {
+        hide: ["clock"]
+    }
 }
 ```
 
-## Hide/Show Modules
+## Hide/Show Modules triggered through notifications to this module
 
 You can easily hide or show a module by sending a notification to the module.
 Therefore you can for example use the [Magic Mirror Module: Buttons](https://github.com/Jopyth/MMM-Buttons)
@@ -38,5 +38,32 @@ payload: {hide: [], show: ["calendar"], toggle:[]}
 
 You can toggle between show and hide with:
 payload: {hide: [], show: [], toggle:["clock"]}
+
+## Hide/Show Modules triggered through notifications of other modules
+
+You can hide or show a module by notifications send by other modules.
+You need to define which notifications should trigger hide/show or toggle of modules state in the config.
+
+An example is below:
+
+```
+{
+    module: 'MMM-ModuleToggle',
+    config: {
+        hide: ["clock"],
+        notifications: [
+                {
+                    notification: "MMM-Screencast:RUN-APP",
+                    hide: ["calendar"],
+                    show: ["clock"]
+                    
+                }
+                ...
+        ]
+    }
+}
+```
+
+
 
 
