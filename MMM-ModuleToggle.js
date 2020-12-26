@@ -3,7 +3,8 @@ Module.register("MMM-ModuleToggle",{
     requiresVersion: "2.1.0",
     defaults: {
         hide: [],
-        speed: 1000
+        speed: 1000,
+        notifications: []
     },
     notificationReceived: function(notification, payload, sender){
         var self = this;
