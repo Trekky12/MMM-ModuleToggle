@@ -40,7 +40,7 @@ Module.register("MMM-ModuleToggle",{
             var callback = function(){};
             var options = {lockString: self.identifier};
             
-            console.log(module);
+            console.log(module.identifier);
 
 //            if (true) { // modulesList.includes(module.name)
 //                switch(type){
