@@ -1,4 +1,3 @@
-
 Module.register("MMM-ModuleToggle",{
     requiresVersion: "2.1.0",
     defaults: {
@@ -34,14 +33,16 @@ Module.register("MMM-ModuleToggle",{
     },
     
     changeModuleState: function(modulesList, type = "hide"){
-        var modulesToHide = MM.getModules().withClass(modulesList);
+        var modulesToHide = MM.getModules();
             
         modulesToHide.enumerate(function(module) {
 
             var callback = function(){};
             var options = {lockString: self.identifier};
-            
-            switch(type){
+
+            if (true) { // modulesList.includes(module.name)
+                console.log(module.name);
+                switch(type){
                 case "hide":
                     Log.log("Hide "+ module.name);
                     module.hide(self.config.speed, callback, options);
@@ -58,6 +59,7 @@ Module.register("MMM-ModuleToggle",{
                         module.hide(self.config.speed, callback, options);
                     }
                     break;
+            }
             }
             
         });
