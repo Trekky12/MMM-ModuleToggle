@@ -39,29 +39,27 @@ Module.register("MMM-ModuleToggle",{
 
             var callback = function(){};
             var options = {lockString: self.identifier};
-            
-            console.log(module.identifier);
 
-//            if (true) { // modulesList.includes(module.name)
-//                switch(type){
-//                case "hide":
-//                    Log.log("Hide "+ module.name);
-//                    module.hide(self.config.speed, callback, options);
-//                    break;
-//                case "show":
-//                    Log.log("Show "+ module.name);
-//                    module.show(self.config.speed, callback, options);
-//                    break;
-//                case "toggle":
-//                    Log.log("Toggle "+ module.name);
-//                    if(module.hidden){
-//                        module.show(self.config.speed, callback, options);
-//                    }else{
-//                        module.hide(self.config.speed, callback, options);
-//                    }
-//                    break;
-//            }
-//            }
+            if (modulesList.includes(module.name) || modulesList.includes(module.identifier)) { 
+                switch(type){
+                case "hide":
+                    Log.log("Hide "+ module.name);
+                    module.hide(self.config.speed, callback, options);
+                    break;
+                case "show":
+                    Log.log("Show "+ module.name);
+                    module.show(self.config.speed, callback, options);
+                    break;
+                case "toggle":
+                    Log.log("Toggle "+ module.name);
+                    if(module.hidden){
+                        module.show(self.config.speed, callback, options);
+                    }else{
+                        module.hide(self.config.speed, callback, options);
+                    }
+                    break;
+            }
+            }
             
         });
         
