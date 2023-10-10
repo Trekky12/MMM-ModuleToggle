@@ -24,6 +24,8 @@ Module.register("MMM-ModuleToggle",{
         
         self.config.notifications.forEach(function(item){
             if (notification === item.notification) {
+                self.changeModuleState(item.hide, "hide", self.config.speed);
+                self.changeModuleState(item.show, "show", self.config.speed);
                 self.changeModuleState(item.toggle, "toggle", self.config.speed);
             }
             
