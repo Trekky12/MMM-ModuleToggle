@@ -39,8 +39,9 @@ Module.register("MMM-ModuleToggle",{
 
             var callback = function(){};
             var options = {lockString: self.identifier};
-
-            if (modulesList.includes(module.name) || modulesList.includes(module.identifier)) { 
+            console.log(modulesList.includes(module.name));
+            console.log(modulesList.includes(module.identifier));
+            if (modulesList.includes(module.name) || modulesList.includes(module.identifier)) {
                 switch(type){
                 case "hide":
                     Log.log("Hide "+ module.name);
